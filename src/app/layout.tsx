@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SmoothScroll from '../../components/SmoothScroll/SmoothScroll';
 import ClientWrapper from '@/utils/clientWrapper';
+import GoogleAnalytics from '@/utils/GoogleAnalytics';
 
 
 
@@ -20,8 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ClientWrapper>{children}</ClientWrapper>
         </SmoothScroll>
         <Footer />
-
-        
+        <GoogleAnalytics />
       </body>
     </html>
   );

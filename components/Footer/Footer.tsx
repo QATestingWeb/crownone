@@ -10,10 +10,10 @@ import Link from 'next/link';
 
 
 const socialIcons = [
-    { src: facebookIcon, alt: 'Facebook', link: 'https://www.facebook.com/crowncrlf' },
-    { src: linkedinIcon, alt: 'LinkedIn', link: 'https://www.linkedin.com/company/crowncrlf/posts/?feedView=all' },
-    { src: instagramIcon, alt: 'Instagram', link: 'https://www.instagram.com/crowncrlf' },    
-    { src: youtubeIcon, alt: 'YouTube', link: 'https://www.youtube.com/@crowncrlf' },
+    { src: facebookIcon, alt: 'Facebook', link: 'https://facebook.com/crowncrlf' },
+    { src: linkedinIcon, alt: 'LinkedIn', link: 'https://linkedin.com/company/crowncrlf/posts/?feedView=all' },
+    { src: instagramIcon, alt: 'Instagram', link: 'https://instagram.com/crowncrlf' },
+    { src: youtubeIcon, alt: 'YouTube', link: 'https://youtube.com/@crowncrlf' },
 
 ];
 

@@ -1,7 +1,6 @@
 // src/app/_app.tsx
 
 import { useEffect } from 'react';
-import 'aos/dist/aos.css';
 import './globals.css';
 import type { AppProps } from 'next/app';
 // import AOS from 'aos';

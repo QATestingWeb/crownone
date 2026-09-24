@@ -1,9 +1,8 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Button from '../../../../components/Button/Button';
+import Scene3D from '../../../../components/Scene3D/Scene3D';
 import AppStoreIMG from '../../../../public/Assets/icons/App Store.svg';
 import PlayStoreIMG from '../../../../public/Assets/icons/Play Store.svg';
 import FeatureIMG1 from '../../../../public/Assets/home/CrownOneHero1.webp';
@@ -15,13 +14,6 @@ import FeatureIMG6 from '../../../../public/Assets/home/CrownOneHero6.webp';
 
 const HeroSection: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1500,
-      once: true, 
-    });
-  }, []);
 
   const handleMouseMove = (event: React.MouseEvent) => {
     const { clientX, clientY } = event;
@@ -35,11 +27,12 @@ const HeroSection: React.FC = () => {
 
   return (
     <div
-      className="w-full flex flex-col items-center justify-center md:pt-[0vh] container hero-banner"
+      className="w-full flex flex-col items-center justify-center md:pt-[0vh] container hero-banner relative isolate"
     >
-       <div className='md:w-md  md:mt-[10vh] mt-20 md:px-0 px-5 flex justify-center items-center'>
+      <Scene3D variant="hero" className="-z-10" />
+       <div className='w-full md:mt-[10vh] mt-20 flex justify-center items-center'>
       <video
-        className="md:h-full h-[32vh] object-cover w-auto md:rounded-[60px] rounded-20"
+        className="w-full md:h-[70vh] h-[32vh] object-cover"
         autoPlay
         loop        
         playsInline
@@ -52,7 +45,7 @@ const HeroSection: React.FC = () => {
       
       <div className=" flex items-center justify-center md:flex-row flex-col gap-4 pt-5 md:px-10 px-5 text-center">
         <div className="flex flex-col justify-center items-center text-black gap-3">
-          <h2 className="heading2">Simplify Your Business, Maximize Your Potential</h2>
+          <h2 className="heading2" data-split>Simplify Your Business, Maximize Your Potential</h2>
           <p>Manage payments, shop branding, complaints, and more – all in one app!</p>
           <div className='md:flex hidden'>
           <Button

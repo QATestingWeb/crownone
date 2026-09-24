@@ -15,7 +15,7 @@ interface GradientContainerProps {
 
 const GradientContainer: React.FC<GradientContainerProps> = ({ imageSrc, title, description, gradient, width, aos }) => {
   return (
-    <div className={`flex px-5 py-20 rounded-30 w-[100%] md:w-[${width}]`} style={{ background: gradient }} data-aos-desktop={aos} data-aos-mobile="fade-up">
+    <div className={`flex px-5 py-20 rounded-30 w-[100%] md:w-[${width}]`} style={{ background: gradient }} data-aos-desktop={aos} data-aos-mobile="fade-up" data-tilt='6'>
       <div className='w-[30%]'>
         <Image src={imageSrc} alt={title} width={180} height={100} />
       </div>

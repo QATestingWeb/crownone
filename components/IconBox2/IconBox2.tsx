@@ -15,7 +15,7 @@ interface IconBox2Props{
     <div className='flex flex-col md:gap-3 gap-2'>
         <Image src={icon} alt={heading}/>
         <p>{text}</p>
-        <h3 className='heading3'>{heading}</h3>
+        <h3 className='heading3' data-count>{heading}</h3>
         <h6>{subHeading}</h6>        
     </div>
   )

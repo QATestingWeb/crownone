@@ -7,7 +7,7 @@ import CrownLegacyIMG from '../../../../public/Assets/about/Crown-Group-Legacy.w
 const Legacy = () => {
     return (
         <div className="w-full flex justify-center items-center px-5 md:py-10 py-0">
-        <div className='md:w-lg flex flex-col items-center'>
+        <div className='md:w-full md:max-w-[1150px] flex flex-col items-center'>
         <div className=' flex-col gap-4 md:flex-row flex '>
             <div className='md:w-[50%]' data-aos="fade-up">
                 <Image src={CrownLogo} alt='Crown Group of Companies' />
@@ -32,7 +32,7 @@ const Legacy = () => {
                 
             </div>
             </div>            
-            <Image className='md:mt-20 mt-10 w-[100%]' src={CrownLegacyIMG} alt='Crown Group Legacy' data-aos="zoom-in-up"/>
+            <Image className='md:mt-20 mt-10 w-[100%]' src={CrownLegacyIMG} alt='Crown Group Legacy' data-aos="zoom-in-up" data-parallax='0.15'/>
         </div>
         </div>
     )

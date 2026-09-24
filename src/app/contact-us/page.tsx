@@ -1,5 +1,5 @@
 import React from 'react'
-import Banner from './Banner/Banner'
+import PageBanner from '../../../components/PageBanner/PageBanner'
 import Contact from './ContactDetails/Contact'
 
 
@@ -8,7 +8,7 @@ import Contact from './ContactDetails/Contact'
 const page = () => {
   return (
     <div >
-        <Banner />
+        <PageBanner title='Contact Us' subtitle='Questions, feedback or support — our team is here to help.' />
         <Contact />      
     </div>
   )

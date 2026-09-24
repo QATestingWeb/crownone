@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-@import 'aos/dist/aos.css';
 
 @tailwind base;
 @tailwind components;
@@ -185,3 +184,10 @@
     }
   
   }
+/* Animated elements stay hidden until the GSAP engine picks them up (class is added before paint in layout.tsx). */
+.anim-ready [data-aos]:not([data-anim-done]),
+.anim-ready [data-aos-desktop]:not([data-anim-done]),
+.anim-ready [data-aos-mobile]:not([data-anim-done]),
+.anim-ready [data-split]:not([data-anim-done]) {
+  visibility: hidden;
+}

@@ -3,15 +3,15 @@ import React from 'react'
 const Content = () => {
     return (
         <div className='w-full flex justify-center'>
-            <div className="w-lg flex flex-col gap-10 md:py-20 py-10 px-5">
-                <div className='flex flex-col gap-2'>
+            <div className="w-full max-w-[1150px] flex flex-col gap-10 md:py-20 py-10 px-5">
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h2 className='heading1'>Introduction</h2>
                     <p>
                     Welcome to Crown One. Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you use our website and mobile application.</p>                    
                     <p>By accessing or using Crown One, you agree to the terms outlined in this Privacy Policy.</p>                    
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h3 className='heading5'>Information We Collect</h3>
                     <p>We collect various types of information to improve our services, including:</p>
 
@@ -33,7 +33,7 @@ const Content = () => {
                 </div>
 
                 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h3 className='heading5'>How We Use Your Information</h3>
                     <p>We use the collected information to:</p>                   
                     <ul className='list-inside list-disc '>
@@ -45,7 +45,7 @@ const Content = () => {
                     </ul>            
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h3 className='heading5'>How We Protect Your Information</h3>
                     <p>We implement strict security measures to protect your data, including:</p>                   
                     <ul className='list-inside list-disc '>
@@ -55,7 +55,7 @@ const Content = () => {
                     </ul>            
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h3 className='heading5'>Third-Party Services</h3>
                     <p>We may share limited information with trusted third parties, including:</p>                   
                     <ul className='list-inside list-disc '>
@@ -65,12 +65,12 @@ const Content = () => {
                     </ul>            
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h3 className='heading5'>Cookies & Tracking Technologies</h3>
                     <p>We use cookies and similar tracking technologies to enhance user experience and collect usage data. You can manage cookie preferences through your browser settings.</p>                            
                 </div>
                 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h3 className='heading5'>Your Rights & Choices</h3>
                     <p>You have the right to:</p>                   
                     <ul className='list-inside list-disc '>
@@ -80,12 +80,12 @@ const Content = () => {
                     </ul>            
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h3 className='heading5'>Changes to This Privacy Policy</h3>
                     <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and we encourage you to review it periodically.</p>                            
                 </div>
                           
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2' data-aos="fade-up">
                     <h3 className='heading5'>Contact Us</h3>
                     <p>If you have any questions about this Privacy Policy, you can contact us at:</p>
                     <ul className='flex flex-col gap-2 mt-2'>

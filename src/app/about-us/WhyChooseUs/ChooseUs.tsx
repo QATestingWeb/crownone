@@ -14,7 +14,7 @@ import Image from 'next/image'
 const ChooseUs = () => {
     return (
         <div className="flex justify-center px-5 md:py-20 py-10">
-        <div className='md:w-lg'>
+        <div className='md:w-full md:max-w-[1150px]'>
             <div className="flex flex-col md:flex-row">
                 <div className='md:w-[50%] order-last md:order-first flex flex-col justify-end '>
                     <h3 className='heading3' data-aos="fade-up">Crown One</h3>
@@ -33,7 +33,7 @@ const ChooseUs = () => {
                     </div>
                 </div>
                 <div className="md:w-[50%] md:block hidden">
-                    <Image src={CrownOneIMG} alt='Crown One App' width={600} data-aos="zoom-out"/>
+                    <Image src={CrownOneIMG} alt='Crown One App' width={600} data-aos="zoom-out" data-parallax='0.1'/>
                 </div>
             </div>
             <div className="flex md:flex-nowrap flex-wrap md:gap-20 gap-5 md:mt-10 mt-8">

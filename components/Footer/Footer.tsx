@@ -9,7 +9,7 @@ import youtubeIcon from '../../public/Assets/icons/YT.svg';
 import Link from 'next/link';
 
 
-const socialIcons = [
+export const socialIcons = [
     { src: facebookIcon, alt: 'Facebook', link: 'https://facebook.com/crowncrlf' },
     { src: linkedinIcon, alt: 'LinkedIn', link: 'https://linkedin.com/company/crowncrlf/posts/?feedView=all' },
     { src: instagramIcon, alt: 'Instagram', link: 'https://instagram.com/crowncrlf' },
@@ -19,7 +19,7 @@ const socialIcons = [
 
 const Footer: React.FC = () => {
     return (
-        <div className='w-full bg-black-100 flex justify-center items-center md:py-[150px] py-20 md:px-10 px-5'>
+        <div className='w-full bg-black-100 flex justify-center items-center md:py-16 py-10 md:px-10 px-5'>
             <div className="w-lg flex md:flex-row flex-col justify-between gap-10" data-aos-desktop="fade-up">
                 <div className='md:w-[30%]' data-aos-mobile="fade-in">
                     <Image src={FooterLogo} alt='Footer Logo' />
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                 <div className='text-white md:w-[20%]'>
                     <h3 className='font-bold text-xl mb-2' data-aos-mobile="fade-up">About Us</h3>
                     <h4 className='md:text-[15px] text-[13px] cursor-pointer' data-aos-mobile="fade-up">
-                        <Link href='/coming-soon' className='hover:text-orange-400 block mb-2' >Blog</Link>
+                        <Link href='/blog' className='hover:text-orange-400 block mb-2' >Blog</Link>
                         {/* <Link href='/coming-soon' className='hover:text-orange-400 block mb-2' >Careers</Link> */}
                         <Link href='/about-us' className='hover:text-orange-400 block mb-2' >About Us</Link>
                     </h4>
@@ -42,17 +42,17 @@ const Footer: React.FC = () => {
                 <div className='text-white md:w-[20%]'>
                     <h3 className='font-bold text-xl mb-2' data-aos-mobile="fade-up">Help & Support</h3>
                     <h4 className='md:text-[15px] text-[13px] cursor-pointer' data-aos-mobile="fade-up">
-                        <Link href='/coming-soon' className='hover:text-orange-400 block mb-2' >Help & Support</Link>
+                        <Link href='/help-and-support' className='hover:text-orange-400 block mb-2' >Help & Support</Link>
                         <Link href='/contact-us' className='hover:text-orange-400 block mb-2' >Contact </Link>
-                        <Link href='/coming-soon' className='hover:text-orange-400 block mb-2' >FAQS</Link>
+                        <Link href='/faqs' className='hover:text-orange-400 block mb-2' >FAQS</Link>
                     </h4>
                 </div>
                 <div className='text-white md:w-[20%]'>
                     <h3 className='font-bold text-xl mb-2' data-aos-mobile="fade-up">Legal</h3>
                     <h4 className='md:text-[15px] text-[13px] cursor-pointer' data-aos-mobile="fade-up">
-                        <Link href='/coming-soon' className='hover:text-orange-400 block mb-2' >Terms & Conditions</Link>
-                        <Link href='/coming-soon' className='hover:text-orange-400 block mb-2' >Privacy Policy</Link>
-                        <Link href='/coming-soon' className='hover:text-orange-400 block mb-2' >Warranty Policy</Link>
+                        <Link href='/terms-and-conditions' className='hover:text-orange-400 block mb-2' >Terms & Conditions</Link>
+                        <Link href='/privacy-policy' className='hover:text-orange-400 block mb-2' >Privacy Policy</Link>
+                        <Link href='/warranty-policy' className='hover:text-orange-400 block mb-2' >Warranty Policy</Link>
                     </h4>
                 </div>
             </div>

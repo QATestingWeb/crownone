@@ -11,7 +11,7 @@ import Image from 'next/image'
 const Progress = () => {
   return (
     <div className="w-full flex justify-center items-center px-5">
-    <div className='md:w-lg '>
+    <div className='md:w-full md:max-w-[1150px] '>
         <h4 className='heading4' data-aos="fade-up">Numbers that Speak for Themselves</h4>
         <div className="flex md:flex-nowrap flex-wrap md:gap-10 gap-5 md:mt-10 mt-8 md:justify-between">
             <div className='w-[40%] md:w-auto' data-aos="zoom-in" data-aos-duration="5000">
@@ -27,7 +27,7 @@ const Progress = () => {
             <IconBox2 key='04' icon={RatedIcon} text="Highly Rated with" heading='14.1K' subHeading='Reviews on Play Store' />
             </div>
         </div>
-        <Image className='md:my-40 my-10' src={PakistanMapIMG} alt='Pakistan Map' data-aos="zoom-out"/>
+        <Image className='md:my-40 my-10' src={PakistanMapIMG} alt='Pakistan Map' data-aos="zoom-out" data-parallax='0.15'/>
     </div>
     </div>
   )

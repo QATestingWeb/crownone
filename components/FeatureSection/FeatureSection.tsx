@@ -17,6 +17,7 @@ const FeatureSection: React.FC = () => {
           <div
             key={index}
             className={`bg-gray-100 p-8 md:p-20 rounded-lg mt-10 md:mt-40 h-auto md:h-[40vh] flex flex-col md:flex-row relative ${feature.order}`}
+            data-tilt="3"
           >
             
             <div

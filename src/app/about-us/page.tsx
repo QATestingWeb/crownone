@@ -8,7 +8,7 @@ import Progress from './Progress/Progress'
 const Page = () => {
   return (
     <div>
-        <PageBanner title='About Us' subtitle='The team behind Crown One and why we built it.' />
+        <PageBanner curveColor='#F6F6F6' title='About Us' subtitle='The team behind Crown One and why we built it.' />
         <Hero />
         <Legacy />
         <ChooseUs />

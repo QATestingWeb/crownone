@@ -43,14 +43,30 @@ const HeroSection: React.FC = () => {
       </video>
       </div>
       
-      <div className=" flex items-center justify-center md:flex-row flex-col gap-4 pt-5 md:px-10 px-5 text-center">
-        <div className="flex flex-col justify-center items-center text-black gap-3">
-          <h2 className="heading2" data-split>Simplify Your Business, Maximize Your Potential</h2>
-          <p>Manage payments, shop branding, complaints, and more – all in one app!</p>
-          <div className='md:flex hidden'>
+      {/* Kept narrower than the 3D scene's clear column (HERO_CLEAR_PX) so floating parts never cross the text */}
+      <div className="w-full max-w-[900px] flex flex-col items-center text-center md:pt-12 pt-8 px-5">
+        <span className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur border border-gray-30/60 shadow-sm text-orange-400 md:text-[13px] text-[11px] font-semibold uppercase tracking-wider' data-aos="fade-up">
+          <span className='w-2 h-2 rounded-full bg-orange-400' />
+          One app for retailers &amp; mechanics
+        </span>
+        <h2 className="heading2 md:!leading-[60px] mt-5 text-black-100" data-split>
+          Simplify Your Business, <span className='text-orange-400'>Maximize Your Potential</span>
+        </h2>
+        <p className='text-gray-50 md:!text-[18px] mt-4 max-w-[700px]' data-aos="fade-up">Manage payments, shop branding, complaints, and more – all in one app!</p>
+
+        <div className="flex items-center justify-center md:gap-5 gap-3 md:mt-8 mt-6" data-aos="fade-up">
+          <a href="https://apps.apple.com/us/app/crown-one/id6449677909" className='hover:-translate-y-1 transition-transform duration-300'>
+            <Image className="md:w-[180px] w-[140px] h-auto" src={AppStoreIMG} alt="App Store" />
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.csi.crownfamily&hl=en" className='hover:-translate-y-1 transition-transform duration-300'>
+            <Image className="md:w-[180px] w-[140px] h-auto" src={PlayStoreIMG} alt="Play Store" />
+          </a>
+        </div>
+
+        <div className='md:mt-4 mt-3' data-aos="fade-up">
           <Button
             iconName="arrow-right"
-            iconColor="#ff7438"            
+            iconColor="#ff7438"
             buttonText="Explore More Features"
             bgColorStart="transparent"
             bgColorEnd="transparent"
@@ -60,16 +76,19 @@ const HeroSection: React.FC = () => {
             order="order-last"
             link="#features"
           />
-          </div>
-          <div className="md:flex hidden md:gap-10 gap-5">
-            <a href="https://apps.apple.com/us/app/crown-one/id6449677909">
-              <Image className="w-20 md:w-[25vh]" src={AppStoreIMG} alt="App Store" />
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.csi.crownfamily&hl=en">
-              <Image className="w-20 md:w-[25vh]" src={PlayStoreIMG} alt="Play Store" />
-            </a>
-          
-          </div>
+        </div>
+
+        <div className='flex items-center justify-center md:gap-10 gap-5 md:mt-6 mt-5 md:px-8 px-5 md:py-4 py-3 rounded-full bg-white/80 backdrop-blur border border-gray-30/60 shadow-sm' data-aos="fade-up">
+          {[
+            { value: '70,000+', label: 'Mechanics' },
+            { value: '25,000+', label: 'Retailers' },
+            { value: '100K+', label: 'Downloads' },
+          ].map((stat, i) => (
+            <div key={stat.label} className={`flex flex-col items-center ${i > 0 ? 'md:pl-10 pl-5 border-l border-gray-30/60' : ''}`}>
+              <span className='font-extrabold md:text-[20px] text-[15px] text-orange-400 leading-tight'>{stat.value}</span>
+              <span className='md:text-[13px] text-[11px] text-gray-90'>{stat.label}</span>
+            </div>
+          ))}
         </div>
       </div>
 

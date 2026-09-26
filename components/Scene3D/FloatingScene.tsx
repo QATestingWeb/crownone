@@ -47,6 +47,10 @@ const X_RANGE: Record<SceneVariant, { desktop: [number, number]; mobile: [number
   banner: { desktop: [0.15, 0.95], mobile: [0.45, 0.95] },
 };
 
+// Desktop hero keeps a centred column (in screen px) free of parts so they never drift over the heading.
+const HERO_CLEAR_PX = 980;
+const CAMERA_Z = 8;
+
 function createItems(variant: SceneVariant, count: number, isMobile: boolean, { halfWidth, halfHeight, pxPerUnit }: Layout): Item[] {
   const device = isMobile ? 'mobile' : 'desktop';
   const [minPx, maxPx] = SIZE_PX[variant][device];
@@ -55,7 +59,17 @@ function createItems(variant: SceneVariant, count: number, isMobile: boolean, { 
 
   return Array.from({ length: count }, (_, i) => {
     const side = variant === 'hero' ? (i % 2 === 0 ? -1 : 1) : 1;
-    const x = side * rand(minX, maxX) * halfWidth;
+    const z = rand(-2, 0.5);
+    // Geometries are ~2 units across, so halve the target diameter.
+    const scale = px(rand(minPx, maxPx)) / 2;
+    let xMin = minX * halfWidth;
+    if (variant === 'hero' && !isMobile) {
+      // Parts further back project closer to the centre, so push them out by the perspective factor.
+      // On narrow screens they peek in from the edges rather than cover the text.
+      const clear = (px(HERO_CLEAR_PX / 2) + scale) * (CAMERA_Z - z) / CAMERA_Z;
+      xMin = Math.max(xMin, Math.min(clear, halfWidth * 0.97));
+    }
+    const x = side * rand(xMin, Math.max(xMin, maxX * halfWidth));
     // Spread evenly from top to bottom, with jitter, so tall heroes don't leave empty bands.
     // Mobile banners keep to the top band: there the title and subtitle span nearly the full width below it.
     const y = variant === 'banner' && isMobile
@@ -64,10 +78,9 @@ function createItems(variant: SceneVariant, count: number, isMobile: boolean, { 
     return {
       type: TYPES[i % TYPES.length],
       material: MATERIALS[i % MATERIALS.length],
-      position: [x, y, rand(-2, 0.5)],
+      position: [x, y, z],
       rotation: [rand(0, Math.PI), rand(0, Math.PI), 0],
-      // Geometries are ~2 units across, so halve the target diameter.
-      scale: px(rand(minPx, maxPx)) / 2,
+      scale,
       spin: [rand(-0.4, 0.4), rand(0.15, 0.5)],
       floatSpeed: rand(0.4, 1),
       floatAmp: px(rand(isMobile ? 6 : 10, isMobile ? 14 : 25)),

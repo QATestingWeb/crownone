@@ -13,6 +13,10 @@ module.exports = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-10px) rotate(-3deg)' },
+        },
       },
       
       colors: {
@@ -51,6 +55,7 @@ module.exports = {
       },
       animation: {
         underline: 'underline 0.5s ease-in-out forwards',
+        float: 'float 4s ease-in-out infinite',
       },
       screens: {
         'sm': '400px',

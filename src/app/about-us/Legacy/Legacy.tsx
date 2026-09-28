@@ -6,7 +6,7 @@ import CrownLegacyIMG from '../../../../public/Assets/about/Crown-Group-Legacy.w
 
 const Legacy = () => {
     return (
-        <div className="w-full md:py-10 pt-8">
+        <div className="w-full md:pt-20 md:pb-10 pt-12">
             <div className='w-full flex justify-center px-5'>
                 <div className='w-full md:max-w-[1150px] flex flex-col gap-4 md:flex-row'>
                     <div className='md:w-[50%]' data-aos="fade-up">

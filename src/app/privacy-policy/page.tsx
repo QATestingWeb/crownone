@@ -5,7 +5,7 @@ import Content from './Body/Content'
 const page = () => {
   return (
     <div>
-        <PageBanner title='Privacy Policy' />
+        <PageBanner title='Privacy Policy' subtitle='How we collect, use and protect your information.' curveColor='#F6F6F6' />
         <Content />
     </div>
   )

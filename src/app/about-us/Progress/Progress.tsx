@@ -44,12 +44,9 @@ const Progress = () => {
                 ))}
             </div>
             <div className='h-full' data-aos="zoom-out">
-                <div className='relative h-full flex flex-col rounded-[30px] bg-white border border-gray-30/50 shadow-xl md:p-8 p-5 overflow-hidden'>
-                    <div className='absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#ff7438]/10 blur-3xl' />
-                    <div className='absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-[#fe4f11]/10 blur-3xl' />
-                    <div className='relative flex-1 min-h-[280px]'>
-                        <Image className='object-contain' src={PakistanMapIMG} alt='Pakistan Map' fill sizes='(min-width: 1024px) 540px, 100vw' />
-                    </div>
+                {/* Scaled up past the grid row so the map reads larger than the stat boxes beside it */}
+                <div className='relative h-full md:min-h-[420px] min-h-[340px] md:scale-[1.2] md:-translate-y-6 origin-center'>
+                    <Image className='object-contain drop-shadow-xl' src={PakistanMapIMG} alt='Pakistan Map' fill sizes='(min-width: 1024px) 700px, 100vw' />
                 </div>
             </div>
         </div>

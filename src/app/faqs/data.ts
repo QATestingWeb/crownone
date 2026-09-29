@@ -16,7 +16,7 @@ export const allFaqsData = [
   },
   {
       question: "How do I make a warranty claim?",
-      answer: "Warranty claims for eligible Crown products can be submitted and tracked through the Crown One app. Please see our Warranty Policy page for details on eligibility and the claims process."
+      answer: "Warranty claims for eligible Crown products can be submitted and tracked through the Crown One app."
   },
   {
       question: "What is Shop Branding?",

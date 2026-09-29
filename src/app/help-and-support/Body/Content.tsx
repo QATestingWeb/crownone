@@ -22,8 +22,6 @@ const topics = [
     {
         title: 'Warranty Claims',
         description: 'Submit and track warranty claims for eligible Crown products directly through the app.',
-        link: '/warranty-policy',
-        linkText: 'Read Warranty Policy',
     },
     {
         title: 'Account & Privacy',

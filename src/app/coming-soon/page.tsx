@@ -1,5 +1,11 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import BannerIMG from '../../../public/Assets/home/HeroBanner.webp';
+
+export const metadata: Metadata = {
+  title: 'Coming Soon',
+  robots: { index: false, follow: true },
+};
 
 const ComingSoonPage = () => {
   return (

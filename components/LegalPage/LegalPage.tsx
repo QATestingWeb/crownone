@@ -2,9 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope, faPhone, faLocationDot, faCheck, faCircleExclamation, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhone, faGlobe, faLocationDot, faCheck, faCircleExclamation, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-// Shared layout for the legal pages (Terms, Privacy, Warranty): intro + key points, jump links,
+// Shared layout for the legal pages (Terms, Privacy): intro + key points, jump links,
 // a two-column bento of section cards and a contact card. Pages only supply content.
 
 export type LegalBlock =
@@ -26,6 +26,7 @@ export interface LegalSection {
 
 interface LegalPageProps {
     intro: React.ReactNode;
+    lastUpdated: string;
     notice: React.ReactNode;
     keyPoints: string[];
     sections: LegalSection[];
@@ -33,9 +34,10 @@ interface LegalPageProps {
 }
 
 const contacts = [
-    { icon: faEnvelope, label: 'Email', value: 'info@crownone.app', href: 'mailto:info@crownone.app' },
-    { icon: faPhone, label: 'Phone', value: '021-111-000-348', href: 'tel:021111000348' },
-    { icon: faLocationDot, label: 'Address', value: 'Suite # 120, Office Wing, 1st floor, Park Towers, Block 5 Clifton' },
+    { icon: faEnvelope, label: 'Email', value: 'info@crowngroup.com.pk', href: 'mailto:info@crowngroup.com.pk' },
+    { icon: faPhone, label: 'Phone', value: '+92 21 111 000 348', href: 'tel:+9221111000348' },
+    { icon: faGlobe, label: 'Website', value: 'www.crowngroup.com.pk', href: 'https://www.crowngroup.com.pk' },
+    { icon: faLocationDot, label: 'Address', value: 'Suite # 120, Office Wing, 1st Floor, Park Towers, Block 5, Clifton, Karachi, Sindh 75600, Pakistan' },
 ]
 
 const TONES: Record<LegalTone, { card: string; title: string; text: string; number: string; sub: string }> = {
@@ -106,8 +108,8 @@ const SectionCard = ({ section, index }: { section: LegalSection; index: number 
     const tone = section.tone ?? 'default'
     const t = TONES[tone]
     return (
-        <section id={section.id} className='break-inside-avoid md:mb-6 mb-4 scroll-mt-8' data-aos='fade-up'>
-            <div className={`group rounded-[24px] border md:p-8 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${t.card}`}>
+        <section id={section.id} className='scroll-mt-8 md:last:odd:col-span-2' data-aos='fade-up'>
+            <div className={`group h-full rounded-[24px] border md:p-8 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${t.card}`}>
                 <div className='flex items-start justify-between'>
                     <div className='w-12 h-12 rounded-2xl bg-gradient-to-br from-[#ff8a4c] to-[#fe4f11] text-white flex items-center justify-center shadow-lg shadow-orange-400/30 transition-transform duration-300 group-hover:rotate-6'>
                         <FontAwesomeIcon icon={section.icon} className='w-5 h-5' />
@@ -123,7 +125,7 @@ const SectionCard = ({ section, index }: { section: LegalSection; index: number 
     )
 }
 
-const LegalPage: React.FC<LegalPageProps> = ({ intro, notice, keyPoints, sections, contactText }) => {
+const LegalPage: React.FC<LegalPageProps> = ({ intro, lastUpdated, notice, keyPoints, sections, contactText }) => {
     return (
         <div className='w-full flex justify-center bg-gray-10 px-5 md:pt-12 pt-8 md:pb-24 pb-12'>
             <div className='w-full max-w-[1150px]'>
@@ -131,10 +133,13 @@ const LegalPage: React.FC<LegalPageProps> = ({ intro, notice, keyPoints, section
                 <div className='grid md:grid-cols-[1.35fr_1fr] grid-cols-1 md:gap-6 gap-4'>
                     <div className='rounded-[24px] bg-white border border-gray-30/60 shadow-sm md:p-10 p-6 flex flex-col justify-between' data-aos='fade-up'>
                         <div>
-                            <span className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff4ec] text-orange-400 text-[13px] font-semibold uppercase tracking-wider'>
-                                <span className='w-2 h-2 rounded-full bg-orange-400' />
-                                Please read carefully
-                            </span>
+                            <div className='flex flex-wrap items-center justify-between gap-3'>
+                                <span className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff4ec] text-orange-400 text-[13px] font-semibold uppercase tracking-wider'>
+                                    <span className='w-2 h-2 rounded-full bg-orange-400' />
+                                    Please read carefully
+                                </span>
+                                <span className='text-[13px] text-gray-90'>Last Updated: <b className='text-black-50'>{lastUpdated}</b></span>
+                            </div>
                             <p className='md:!text-[21px] !text-[17px] md:leading-[34px] leading-[27px] font-medium text-black-50 md:mt-6 mt-4'>{intro}</p>
                         </div>
                         <div className='flex items-start gap-3 md:mt-8 mt-6 pt-6 border-t border-gray-30/60'>
@@ -182,7 +187,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ intro, notice, keyPoints, section
                 </nav>
 
                 {/* Sections */}
-                <div className='md:columns-2 md:gap-6'>
+                <div className='grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 md:mb-6 mb-4'>
                     {sections.map((section, i) => <SectionCard key={section.id} section={section} index={i} />)}
                 </div>
 
@@ -191,8 +196,9 @@ const LegalPage: React.FC<LegalPageProps> = ({ intro, notice, keyPoints, section
                     <div>
                         <h3 className='heading5'>Still have <span className='text-orange-400'>questions?</span></h3>
                         <p className='text-gray-50 mt-3'>{contactText}</p>
+                        <p className='font-semibold text-black-50 mt-3'>Crown Group of Companies</p>
                     </div>
-                    <div className='grid md:grid-cols-3 grid-cols-1 gap-3'>
+                    <div className='grid sm:grid-cols-2 grid-cols-1 gap-3'>
                         {contacts.map((contact) => {
                             const inner = (
                                 <>
@@ -200,7 +206,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ intro, notice, keyPoints, section
                                         <FontAwesomeIcon icon={contact.icon} className='w-4 h-4' />
                                     </span>
                                     <span className='block text-[12px] uppercase tracking-wider text-gray-90 mt-3'>{contact.label}</span>
-                                    <span className='block text-[14px] font-semibold text-black-50 mt-1'>{contact.value}</span>
+                                    <span className='block text-[14px] font-semibold text-black-50 mt-1 break-words'>{contact.value}</span>
                                 </>
                             )
                             const className = 'rounded-2xl bg-gray-10 border border-transparent p-5'

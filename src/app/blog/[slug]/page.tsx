@@ -3,10 +3,30 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import PageBanner from '../../../../components/PageBanner/PageBanner'
+import type { Metadata } from 'next'
 import { blogPosts, formatDate } from '../data'
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      images: [post.image.src],
+    },
+  };
 }
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {

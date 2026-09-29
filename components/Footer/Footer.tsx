@@ -38,7 +38,6 @@ const footerLinks = [
         links: [
             { label: 'Terms & Conditions', href: '/terms-and-conditions' },
             { label: 'Privacy Policy', href: '/privacy-policy' },
-            { label: 'Warranty Policy', href: '/warranty-policy' },
         ],
     },
 ];
